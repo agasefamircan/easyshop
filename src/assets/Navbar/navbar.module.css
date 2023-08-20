@@ -2,7 +2,7 @@
   display: flex;
   position: sticky;
   justify-content: space-between;
-  background-color: #bbe60f;
+  background-color: rgb(54, 144, 54);
   padding: 0 10%;
 
   .logo {
@@ -13,12 +13,23 @@
       height: 100%;
     }
   }
-  .details{
+  .details {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .account{
-        display: flex;
+    gap: 20px;
+    .account {
+      display: flex;
+      gap: 10px;
+    }
+  }
+  .navItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    .item {
+      color: #fff;
     }
   }
 }
