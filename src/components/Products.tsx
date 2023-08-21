@@ -3,22 +3,23 @@ import { useEffect, useState } from "react";
 
 const Products = () => {
   const [loading, setLoading] = useState(0);
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
   const[filtered,setFiltered]=useState(data)
 
   useEffect(() => {
-    setLoading(1);
-    axios({
-      method: "GET",
-      baseURL: "http://api.fakeshop-api.com",
-      url: "/products/getAllProducts",
-    })
-      .then(({ data }) => {
-        setData(data.products);
-      })
-      .catch(err => console.log(err))
-      .finally(() => setLoading(0));
-  }, []);
+    const fetchProduct=async ()=>{
+        setLoading(1)
+        try {
+            const res = await axios.get("https://fakestoreapi.com/products");
+            setData(res.data)
+        } catch (error) {
+            console.log("ERROR :",error);
+        }
+        setLoading(0)
+    }
+    fetchProduct()
+},[])
+
 
   return (
     <div className="produsts">
@@ -29,9 +30,9 @@ const Products = () => {
         <button>Accessories</button>
       </div>
       <div className="product-list">
-        {/* {data.map((product)=>(
-          <h1>{product.image}</h1>
-        ))} */}
+        {data.map((product,i)=>(
+          <h1 key={i}>{product.title}</h1>
+        ))}
       </div>
     </div>
   );
