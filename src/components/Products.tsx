@@ -4,7 +4,7 @@ import style from "../assets/css/products.module.css";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 
-const Products = () => {
+const Products = ({products}) => {
   const [loading, setLoading] = useState(0);
   const [data, setData] = useState([]);
   const [filtered, setFiltered] = useState(data);
