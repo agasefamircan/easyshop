@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import style from "../assets/css/products.module.css";
 import { useEffect, useState } from "react";
-import Loading from "./Loading";
+import  { LoadingProducts } from "./Loading";
 
 const Products = () => {
   const [loading, setLoading] = useState(0);
@@ -66,7 +66,7 @@ const Products = () => {
           </button>
         </div>
         {loading ? (
-          <Loading />
+          <LoadingProducts />
         ) : (
           <div className={style.productList}>
             {filtered.map((product, i) => (
@@ -101,5 +101,4 @@ const Products = () => {
     </>
   );
 };
-
 export default Products;

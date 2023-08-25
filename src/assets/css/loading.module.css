@@ -1,0 +1,16 @@
+.ui_item{
+    margin: 3em !important;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+}
+.ui_itemPro{
+    margin: 3em 10em !important;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+}
