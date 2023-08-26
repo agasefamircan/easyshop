@@ -3,13 +3,14 @@ import axios from "axios";
 import styles from "../assets/css/product.module.css";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
+import Products from "../types/productTypes";
 
-const Product = () => {
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
+const Product:React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [notFound, setNotFound] = useState<boolean>(false);
 
-  const { productId } = useParams();
-  const [products, setProducts] = useState([]);
+  const { productId } = useParams<{ productId: string }>();
+  const [products, setProducts] = useState<Products[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -26,10 +27,10 @@ const Product = () => {
     fetchProducts();
   }, []);
 
-  const product = products.find((item) => item.id == productId);
+  const product = products.find((item) => item.id ==Number(productId));
   
   useEffect(() => {
-    !product ? setNotFound(true) : setNotFound(false);
+    setNotFound(!product);
   }, [product]);
 
   if (loading) {
@@ -45,7 +46,7 @@ const Product = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="ui items">
+        <div className={`ui items ${styles.items}`}>
           <div className="item">
             <div className="ui small image">
               <img className={styles.img} src={product.image} />

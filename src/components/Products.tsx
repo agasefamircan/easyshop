@@ -1,15 +1,16 @@
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import style from "../assets/css/products.module.css";
-import { useEffect, useState } from "react";
-import  { LoadingProducts } from "./Loading";
+import React, { useEffect, useState } from "react";
+import { LoadingProducts } from "./Loading";
+import Product from "../types/productsTypes";
 
-const Products = () => {
-  const [loading, setLoading] = useState(0);
-  const [data, setData] = useState([]);
-  const [filtered, setFiltered] = useState(data);
+const Products: React.FC = () => {
+  const [loading, setLoading] = useState<number>(0);
+  const [data, setData] = useState<Product[]>([]);
+  const [filtered, setFiltered] = useState<Product[]>([]);
 
-  const filterProduct = (category) => {
+  const filterProduct = (category: string) => {
     const updatedData = data.filter((updated) => updated.category === category);
     setFiltered(updatedData);
   };
@@ -18,7 +19,9 @@ const Products = () => {
     const fetchProduct = async () => {
       setLoading(1);
       try {
-        const res = await axios.get("https://fakestoreapi.com/products");
+        const res = await axios.get<Product[]>(
+          "https://fakestoreapi.com/products"
+        );
         setData(res.data);
         setFiltered(res.data);
         setLoading(0);
