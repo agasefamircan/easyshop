@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 import axios from "axios";
 import styles from "../assets/css/product.module.css";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
 import Products from "../types/productTypes";
 
-const Product:React.FC = () => {
+const Product: FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [notFound, setNotFound] = useState<boolean>(false);
 
@@ -27,8 +27,8 @@ const Product:React.FC = () => {
     fetchProducts();
   }, []);
 
-  const product = products.find((item) => item.id ==Number(productId));
-  
+  const product = products.find((item) => item.id == Number(productId));
+
   useEffect(() => {
     setNotFound(!product);
   }, [product]);
@@ -49,15 +49,15 @@ const Product:React.FC = () => {
         <div className={`ui items ${styles.items}`}>
           <div className="item">
             <div className="ui small image">
-              <img className={styles.img} src={product.image} />
+              <img className={styles.img} src={product?.image} />
             </div>
             <div className="content">
-              <div className="header">{product.title}</div>
+              <div className="header">{product?.title}</div>
               <div className="meta">
-                <span className="price">{product.price} $</span>
+                <span className="price">{product?.price} $</span>
               </div>
               <div className="description">
-                <p>{product.description}</p>
+                <p>{product?.description}</p>
               </div>
             </div>
           </div>

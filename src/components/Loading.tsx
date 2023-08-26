@@ -48,27 +48,27 @@ export const LoadingProducts = () => {
 
   return (
     <div className={`${style.ui_itemPro} ui items`}>
-      <div className="item">
+      <div className={`${style.item} item`}>
         <div className="ui small image">
           <Skeleton height={250} width={150} />
         </div>
       </div>
-      <div className="item">
+      <div className={`${style.item} item`}>
         <div className="ui small image">
           <Skeleton height={250} width={150} />
         </div>
       </div>
-      <div className="item">
+      <div className={`${style.item} item`}>
         <div className="ui small image">
           <Skeleton height={250} width={150} />
         </div>
       </div>
-      <div className="item">
+      <div className={`${style.item} item`}>
         <div className="ui small image">
           <Skeleton height={250} width={150} />
         </div>
       </div>
-      <div className="item">
+      <div className={`${style.item} item`}>
         <div className="ui small image">
           <Skeleton height={250} width={150} />
         </div>

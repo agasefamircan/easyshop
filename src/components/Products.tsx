@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import style from "../assets/css/products.module.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState,FC } from "react";
 import { LoadingProducts } from "./Loading";
 import Product from "../types/productsTypes";
 
-const Products: React.FC = () => {
+const Products:FC = () => {
   const [loading, setLoading] = useState<number>(0);
   const [data, setData] = useState<Product[]>([]);
   const [filtered, setFiltered] = useState<Product[]>([]);

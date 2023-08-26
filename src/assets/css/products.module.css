@@ -8,6 +8,7 @@
     position: sticky;
     top: 90px;
     background-color: #fff;
+    z-index: -1;
 }
 .products{
     max-width: 1550px;
@@ -19,7 +20,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 70px;
-    flex-wrap: wrap;
     margin-top: 50px;
 }
 
