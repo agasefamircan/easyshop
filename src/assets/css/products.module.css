@@ -7,8 +7,12 @@
     margin-top: 30px;
     position: sticky;
     top: 90px;
-    background-color: #fff;
-    z-index: -1;
+}
+.filterButtons button{
+    color: rgba(24, 167, 148, 0.92) !important;
+}
+#buttons{
+    box-shadow: 0 0 0 2px rgba(24, 167, 148, 0.92) inset!important;
 }
 .products{
     max-width: 1550px;
@@ -38,6 +42,8 @@
     width: 100%;
     padding: 25px;
     object-fit: contain;
+    position: relative;
+    z-index: -11;
 }
 
 .cardTitle{

@@ -39,30 +39,35 @@ const Products:FC = () => {
         <div className={style.filterButtons}>
           <button
             className="ui inverted blue button"
+            id={style.buttons}
             onClick={() => setFiltered(data)}
           >
             All
           </button>
           <button
             className="ui inverted blue button"
+            id={style.buttons}
             onClick={() => filterProduct("electronics")}
           >
             Electronics
           </button>
           <button
             className="ui inverted blue button"
+            id={style.buttons}
             onClick={() => filterProduct("jewelery")}
           >
             Accessories
           </button>
           <button
             className="ui inverted blue button"
+            id={style.buttons}
             onClick={() => filterProduct("men's clothing")}
           >
             Men's clothes{" "}
           </button>
           <button
             className="ui inverted blue button"
+            id={style.buttons}
             onClick={() => filterProduct("women's clothing")}
           >
             Women's clothes
