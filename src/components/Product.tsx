@@ -56,7 +56,7 @@ const Product: FC = () => {
               <div className="meta">
                 <span className="price">{product?.price} $</span>
               </div>
-              <div className="description">
+              <div className={styles.description}>
                 <p>{product?.description}</p>
               </div>
               <div className={styles.buttons}>

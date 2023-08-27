@@ -7,6 +7,10 @@
     z-index: -1;
 }
 .buttons{
+    max-width: 200px;
     display: flex;
     justify-content: space-between;
+}
+.description p{
+    text-align: start;
 }
