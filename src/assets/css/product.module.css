@@ -6,3 +6,7 @@
     position: relative;
     z-index: -1;
 }
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}

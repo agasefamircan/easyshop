@@ -59,6 +59,10 @@ const Product: FC = () => {
               <div className="description">
                 <p>{product?.description}</p>
               </div>
+              <div className={styles.buttons}>
+                      <i className="shopping large teal basket icon"></i>
+                      <i className="heart large teal basket icon"></i>
+                    </div>
             </div>
           </div>
         </div>
